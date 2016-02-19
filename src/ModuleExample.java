@@ -13,19 +13,19 @@ public class ModuleExample {
 		
 		Map<String, String[]> parameterMap = null;
 		
-		Settings<ConfigurationExample> settings = 
+		ConfigurationAccessor<ConfigurationExample> configurationAccessor = 
 			ConfigurationProviderUtil.getCompanyConfigurationWithOverrides(
 				ConfigurationExample.class, 
 				companyId,
 				new ParameterMapSettingsLocator(parameterMap, "namespace--"));
 		
-		ConfigurationExample conf = settings.getConfiguration();
+		ConfigurationExample conf = configurationAccessor.getConfiguration();
 		
 		// Can access strongly typed interface without unsafe casting...
 		conf.key1();
 
 		// Additionally, configuration can be updated via the same object...
-		ModifiableSettings modifiableSettings = settings.getModifiableSettings();
+		ModifiableSettings modifiableSettings = configurationAccessor.getSettings().getModifiableSettings();
 		modifiableSettings.set("key1", "new value");
 		modifiableSettings.store();
 	}

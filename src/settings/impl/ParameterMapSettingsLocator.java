@@ -1,7 +1,6 @@
 package settings.impl;
 import java.util.Map;
 
-import settings.OverrideSettingsLocator;
 import settings.Settings;
 import settings.SettingsLocator;
 
@@ -20,7 +19,7 @@ public class ParameterMapSettingsLocator implements SettingsLocator {
 	}
 	
 	@Override
-	public <T> Settings<T> getSettings(Class<T> clazz) {
+	public Settings getSettings() {
 		return null;
 	}
 }

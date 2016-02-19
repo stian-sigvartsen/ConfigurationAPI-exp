@@ -1,18 +1,17 @@
 package settings.impl;
 
+import settings.ModifiableSettings;
 import settings.Settings;
 import settings.SettingsLocator;
 
-public class OverriddenSettings<T> implements Settings<T> {
+public class OverriddenSettings implements Settings {
 
 	public OverriddenSettings(
 			SettingsLocator baseSettingsLocator, 
-			SettingsLocator overridingSettingsLocator) {
-		
-	}
-	
+			SettingsLocator overridingSettingsLocator) {}
+
 	@Override
-	public T getConfiguration() {
+	public ModifiableSettings getModifiableSettings() {
 		return null;
 	}
 }

@@ -12,7 +12,7 @@ public class CompanySettingsLocator implements SettingsLocator {
 	}
 	
 	@Override
-	public <T> Settings<T> getSettings(Class<T> clazz) {
+	public Settings getSettings() {
 		return null;
 	}
 }

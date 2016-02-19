@@ -5,23 +5,24 @@ import settings.impl.OverriddenSettings;
 
 public class ConfigurationProviderUtil {
 
-	public static <T> Settings<T> getCompanyConfigurationWithOverrides(
+	public static <T> ConfigurationAccessor<T> getCompanyConfigurationWithOverrides(
 			Class<T> clazz, 
 			long companyId,
 			SettingsLocator overrideSettingsLocator) {
 		
-		return new OverriddenSettings<T>(
-			new CompanySettingsLocator(companyId),
-			overrideSettingsLocator);
+		return new ConfigurationAccessorImpl<T>(
+			clazz, 
+			new OverriddenSettings(new CompanySettingsLocator(companyId), overrideSettingsLocator));
+		
 	}
 	
-	public static <T> Settings<T> getConfigurationWithOverrides(
+	public static <T> ConfigurationAccessor<T> getConfigurationWithOverrides(
 			Class<T> clazz, 
 			SettingsLocator baseSettingsLocator,
 			SettingsLocator overrideSettingsLocator) {
 		
-		return new OverriddenSettings<T>(
-				baseSettingsLocator,
-				overrideSettingsLocator);
+		return new ConfigurationAccessorImpl<T>(
+			clazz, 
+			new OverriddenSettings(baseSettingsLocator, overrideSettingsLocator));	
 	}
 }

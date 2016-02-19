@@ -1,7 +1,6 @@
 package settings;
 
-public interface Settings<T> {
+public interface Settings {
 
-	public T getConfiguration();
 	public ModifiableSettings getModifiableSettings();
 }
