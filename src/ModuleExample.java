@@ -1,5 +1,7 @@
 import java.util.Map;
 
+import configuration.ConfigurationAccessor;
+import configuration.ConfigurationProviderUtil;
 import settings.ModifiableSettings;
 import settings.Settings;
 import settings.impl.ParameterMapSettingsLocator;

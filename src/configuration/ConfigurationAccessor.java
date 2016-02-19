@@ -1,3 +1,4 @@
+package configuration;
 import settings.Settings;
 
 

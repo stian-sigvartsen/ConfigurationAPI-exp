@@ -1,3 +1,5 @@
+package configuration;
+import configuration.impl.ConfigurationAccessorImpl;
 import settings.Settings;
 import settings.SettingsLocator;
 import settings.impl.CompanySettingsLocator;

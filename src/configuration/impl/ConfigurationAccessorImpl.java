@@ -1,3 +1,5 @@
+package configuration.impl;
+import configuration.ConfigurationAccessor;
 import settings.Settings;
 
 
